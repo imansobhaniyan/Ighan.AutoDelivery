@@ -78,7 +78,7 @@
     },
     "ProjectSettings": [
       {
-        "FilePath": "C:\\WebSites\\EcoPeyk\\monitoring\\wwwroot\\appsettings.json",
+        "FilePath": "C:\\WebSite.AutoDelivered\\Monitoring\\wwwroot\\appsettings.json",
         "Key": "BaseApiAddress",
         "NewValue": "http://monitoringapi.sobhaniyan.ir/"
       }
