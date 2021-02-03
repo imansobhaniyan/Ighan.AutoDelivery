@@ -1,0 +1,82 @@
+[
+  {
+    "Name": "panel",
+    "ProjectPath": "C:\\Project\\Web\\WebUIs\\Panel\\EcoPeyk.Panel.WebUI",
+    "ProjectOutputPath": "C:\\Output\\Panel",
+    "BackUpPath": "C:\\BackUp\\Panel",
+    "Site": {
+      "Name": "EcoPeyk.Panel.AutoDelivered",
+      "Path": "C:\\WebSite.AutoDelivered\\Panel"
+    },
+    "Git": {
+      "Path": "C:\\Project"
+    },
+    "ProjectSettings": [
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\Panel\\appsettings.json",
+        "OldValue": "\"Monitoring\": \"http://localhost:7711\",",
+        "NewValue": "\"Monitoring\": \"http://monitoring.sobhaniyan.ir\","
+      }
+    ]
+  },
+  {
+    "Name": "driver",
+    "ProjectPath": "C:\\Project\\Web\\AndroidAPIs\\Driver\\EndPoints\\ICP.MobileAPI.WebApi",
+    "ProjectOutputPath": "C:\\Output\\Driver",
+    "BackUpPath": "C:\\BackUp\\Driver",
+    "Site": {
+      "Name": "EcoPeyk.Driver.AutoDelivered",
+      "Path": "C:\\WebSite.AutoDelivered\\Driver"
+    },
+    "Git": {
+      "Path": "C:\\Project"
+    },
+    "ProjectSettings": [
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
+        "OldValue": "\"BaseApiAddress\": \"http://localhost:7811/\",",
+        "NewValue": "\"Monitoring\": \"http://monitoringapi.sobhaniyan.ir\","
+      }
+    ]
+  },
+  {
+    "Name": "monitoringapi",
+    "ProjectPath": "C:\\Project\\Web\\WebUIs\\Monitoring\\EcoPeyk.Monitoring.WebApi",
+    "ProjectOutputPath": "C:\\Output\\MonitoringApi",
+    "BackUpPath": "C:\\BackUp\\MonitoringApi",
+    "Site": {
+      "Name": "EcoPeyk.MonitoringApi.AutoDelivered",
+      "Path": "C:\\WebSite.AutoDelivered\\MonitoringApi"
+    },
+    "Git": {
+      "Path": "C:\\Project"
+    },
+    "ProjectSettings": [
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "OldValue": "\"CoreServiceUri\": \"http://localhost:7511/\",",
+        "NewValue": "\"CoreServiceUri\": \"http://79.175.151.128:9000/\","
+      }
+    ]
+  },
+  {
+    "Name": "monitoring",
+    "ProjectPath": "C:\\Project\\Web\\WebUIs\\Monitoring\\EcoPeyk.Monitoring.WebUI",
+    "ProjectOutputPath": "C:\\Output\\Monitoring",
+    "BackUpPath": "C:\\BackUp\\Monitoring",
+    "Site": {
+      "Name": "EcoPeyk.Monitoring.AutoDelivered",
+      "Path": "C:\\WebSite.AutoDelivered\\Monitoring"
+    },
+    "Git": {
+      "Path": "C:\\Project"
+    },
+    "ProjectSettings": [
+      {
+        "FilePath": "C:\\WebSites\\EcoPeyk\\monitoring\\wwwroot\\appsettings.json",
+        "OldValue": "\"BaseApiAddress\": \"http://localhost:7811/\"",
+        "NewValue": "\"BaseApiAddress\": \"http://monitoringapi.sobhaniyan.ir/\""
+      }
+    ]
+  }
+]
