@@ -21,6 +21,26 @@
         "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
         "Key": "CoreServiceUri",
         "NewValue": "http://79.175.151.128:9000/"
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "Key": "instance",
+        "NewValue": "."
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "Key": "dbName",
+        "NewValue": "EcoPeykDb"
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "Key": "username",
+        "NewValue": "sa"
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "Key": "password",
+        "NewValue": "2#Iman@1"
       }
     ]
   },
@@ -41,6 +61,21 @@
         "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
         "Key": "BaseApiAddress",
         "NewValue": "http://monitoringapi.sobhaniyan.ir"
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
+        "Key": "instance",
+        "NewValue": "."
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
+        "Key": "username",
+        "NewValue": "sa"
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
+        "Key": "password",
+        "NewValue": "2#Iman@1"
       }
     ]
   },
@@ -61,6 +96,26 @@
         "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
         "Key": "CoreServiceUri",
         "NewValue": "http://79.175.151.128:9000/"
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "Key": "instance",
+        "NewValue": "."
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "Key": "dbName",
+        "NewValue": "EcoPeykDb"
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "Key": "username",
+        "NewValue": "sa"
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "Key": "password",
+        "NewValue": "2#Iman@1"
       }
     ]
   },
