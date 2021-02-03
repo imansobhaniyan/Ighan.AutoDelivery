@@ -14,8 +14,13 @@
     "ProjectSettings": [
       {
         "FilePath": "C:\\WebSite.AutoDelivered\\Panel\\appsettings.json",
-        "OldValue": "\"Monitoring\": \"http://localhost:7711\",",
-        "NewValue": "\"Monitoring\": \"http://monitoring.sobhaniyan.ir\","
+        "Key": "Monitoring",
+        "NewValue": "http://monitoring.sobhaniyan.ir"
+      },
+      {
+        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
+        "Key": "CoreServiceUri",
+        "NewValue": "http://79.175.151.128:9000/"
       }
     ]
   },
@@ -34,8 +39,8 @@
     "ProjectSettings": [
       {
         "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
-        "OldValue": "\"BaseApiAddress\": \"http://localhost:7811/\",",
-        "NewValue": "\"Monitoring\": \"http://monitoringapi.sobhaniyan.ir\","
+        "Key": "BaseApiAddress",
+        "NewValue": "http://monitoringapi.sobhaniyan.ir"
       }
     ]
   },
@@ -54,8 +59,8 @@
     "ProjectSettings": [
       {
         "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "OldValue": "\"CoreServiceUri\": \"http://localhost:7511/\",",
-        "NewValue": "\"CoreServiceUri\": \"http://79.175.151.128:9000/\","
+        "Key": "CoreServiceUri",
+        "NewValue": "http://79.175.151.128:9000/"
       }
     ]
   },
@@ -74,8 +79,8 @@
     "ProjectSettings": [
       {
         "FilePath": "C:\\WebSites\\EcoPeyk\\monitoring\\wwwroot\\appsettings.json",
-        "OldValue": "\"BaseApiAddress\": \"http://localhost:7811/\"",
-        "NewValue": "\"BaseApiAddress\": \"http://monitoringapi.sobhaniyan.ir/\""
+        "Key": "BaseApiAddress",
+        "NewValue": "http://monitoringapi.sobhaniyan.ir/"
       }
     ]
   }

@@ -44,7 +44,10 @@ namespace Ighan.AutoDelivery.ConsoleDemo
                 DirectoryFullGraphCopier.Copy(project.ProjectOutputPath, project.Site.Path);
 
                 foreach (var projectSetting in project.ProjectSettings)
-                    FileContentReplacer.Replace(projectSetting.FilePath, projectSetting.OldValue, projectSetting.NewValue);
+                    if (projectSetting.HasKey())
+                        FileContentReplacer.ReplaceByKey(projectSetting.FilePath, projectSetting.Key, projectSetting.NewValue);
+                    else
+                        FileContentReplacer.Replace(projectSetting.FilePath, projectSetting.OldValue, projectSetting.NewValue);
 
                 IISWebSiteManager.Start(project.Site.Name);
             }
@@ -110,9 +113,16 @@ namespace Ighan.AutoDelivery.ConsoleDemo
         {
             public string FilePath { get; set; }
 
+            public string Key { get; set; }
+
             public string OldValue { get; set; }
 
             public string NewValue { get; set; }
+
+            public bool HasKey()
+            {
+                return !string.IsNullOrWhiteSpace(Key);
+            }
         }
     }
 }
