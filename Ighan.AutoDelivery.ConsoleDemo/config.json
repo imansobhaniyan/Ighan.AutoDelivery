@@ -60,7 +60,7 @@
       {
         "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
         "Key": "BaseApiAddress",
-        "NewValue": "http://monitoringapi.sobhaniyan.ir"
+        "NewValue": "http://monitoringapi.sobhaniyan.ir/"
       },
       {
         "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
