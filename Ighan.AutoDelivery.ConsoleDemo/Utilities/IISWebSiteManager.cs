@@ -14,24 +14,88 @@ namespace Ighan.AutoDelivery.Core
         {
             Console.WriteLine("Start => starting website with name " + name);
 
-            new ServerManager().Sites.FirstOrDefault(f => f.Name == name).Start();
+            using (var serverManager = new ServerManager())
+            {
+                StartWebSite(name, serverManager);
 
-            new ServerManager().ApplicationPools.FirstOrDefault(f => f.Name == name).Start();
+                StartApplicationPool(name, serverManager);
+            }
 
             Console.WriteLine("End => starting website");
+
+            static void StartWebSite(string name, ServerManager serverManager)
+            {
+                var webSite = serverManager.Sites.FirstOrDefault(f => f.Name == name);
+
+                WaitForWebSiteStopOrStartProcess(webSite);
+
+                if (webSite.State == ObjectState.Stopped)
+                    webSite.Start();
+
+                WaitForWebSiteStopOrStartProcess(webSite);
+            }
+
+            static void StartApplicationPool(string name, ServerManager serverManager)
+            {
+                var applicationPool = serverManager.ApplicationPools.FirstOrDefault(f => f.Name == name);
+
+                WaitForApplicationPoolStartOrStopProcess(applicationPool);
+
+                if (applicationPool.State == ObjectState.Stopped)
+                    applicationPool.Start();
+
+                WaitForApplicationPoolStartOrStopProcess(applicationPool);
+            }
         }
 
         public static void Stop(string name)
         {
             Console.WriteLine("Start => stoping website with name " + name);
 
-            new ServerManager().Sites.FirstOrDefault(f => f.Name == name).Stop();
-
-            new ServerManager().ApplicationPools.FirstOrDefault(f => f.Name == name).Stop();
-
-            Thread.Sleep(2000);
+            using(var serverManager = new ServerManager())
+            {
+                StopWebSite(name, serverManager);
+                
+                StopApplicationPool(name, serverManager);
+            }
 
             Console.WriteLine("End => stoping website");
+
+            static void StopWebSite(string name, ServerManager serverManager)
+            {
+                var webSite = serverManager.Sites.FirstOrDefault(f => f.Name == name);
+
+                WaitForWebSiteStopOrStartProcess(webSite);
+
+                if (webSite.State == ObjectState.Started)
+                    webSite.Stop();
+
+                WaitForWebSiteStopOrStartProcess(webSite);
+            }
+
+            static void StopApplicationPool(string name, ServerManager serverManager)
+            {
+                var applicationPool = serverManager.ApplicationPools.FirstOrDefault(f => f.Name == name);
+
+                WaitForApplicationPoolStartOrStopProcess(applicationPool);
+
+                if (applicationPool.State == ObjectState.Started)
+                    applicationPool.Stop();
+
+                WaitForApplicationPoolStartOrStopProcess(applicationPool);
+            }
+        }
+
+        private static void WaitForApplicationPoolStartOrStopProcess(ApplicationPool applicationPool)
+        {
+            while (applicationPool.State == ObjectState.Starting || applicationPool.State == ObjectState.Stopping)
+                Thread.Sleep(100);
+        }
+
+        private static void WaitForWebSiteStopOrStartProcess(Site webSite)
+        {
+            while (webSite.State == ObjectState.Starting || webSite.State == ObjectState.Stopping)
+                Thread.Sleep(100);
         }
     }
 }
