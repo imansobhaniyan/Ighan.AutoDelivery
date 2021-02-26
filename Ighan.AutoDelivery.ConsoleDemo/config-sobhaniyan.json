@@ -49,7 +49,7 @@
         {
           "FileName": "appsettings.json",
           "Key": "BaseApiAddress",
-          "NewValue": "http://monitoringapi.sobhaniyan.ir"
+          "NewValue": "http://monitoringapi.sobhaniyan.ir/"
         }
       ]
     },
@@ -78,7 +78,7 @@
         {
           "FileName": "wwwroot\\appsettings.json",
           "Key": "BaseApiAddress",
-          "NewValue": "http://monitoringapi.sobhaniyan.ir"
+          "NewValue": "http://monitoringapi.sobhaniyan.ir/"
         }
       ]
     }
