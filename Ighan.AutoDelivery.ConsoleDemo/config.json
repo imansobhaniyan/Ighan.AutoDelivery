@@ -1,142 +1,86 @@
-[
-  {
-    "Name": "panel",
-    "ProjectPath": "C:\\Project\\Web\\WebUIs\\Panel\\EcoPeyk.Panel.WebUI",
-    "ProjectOutputPath": "C:\\Output\\Panel",
-    "BackUpPath": "C:\\BackUp\\Panel",
-    "Site": {
-      "Name": "EcoPeyk.Panel.AutoDelivered",
-      "Path": "C:\\WebSite.AutoDelivered\\Panel"
+{
+  "RepositoryPath": "C:\\Projects",
+  "DestinationPath": "C:\\WebSites",
+  "SolutionSettings": [
+    {
+      "FileName": "appsettings.json",
+      "Key": "instance",
+      "NewValue": "."
     },
-    "Git": {
-      "Path": "C:\\Project"
+    {
+      "FileName": "appsettings.json",
+      "Key": "username",
+      "NewValue": "sa"
     },
-    "ProjectSettings": [
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\Panel\\appsettings.json",
-        "Key": "Monitoring",
-        "NewValue": "http://monitoring.sobhaniyan.ir"
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "CoreServiceUri",
-        "NewValue": "http://79.175.151.128:9000/"
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "instance",
-        "NewValue": "."
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "dbName",
-        "NewValue": "EcoPeykDb"
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "username",
-        "NewValue": "sa"
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "password",
-        "NewValue": "2#Iman@1"
-      }
-    ]
-  },
-  {
-    "Name": "driver",
-    "ProjectPath": "C:\\Project\\Web\\AndroidAPIs\\Driver\\EndPoints\\ICP.MobileAPI.WebApi",
-    "ProjectOutputPath": "C:\\Output\\Driver",
-    "BackUpPath": "C:\\BackUp\\Driver",
-    "Site": {
-      "Name": "EcoPeyk.Driver.AutoDelivered",
-      "Path": "C:\\WebSite.AutoDelivered\\Driver"
+    {
+      "FileName": "appsettings.json",
+      "Key": "password",
+      "NewValue": "2#Iman@1"
+    }
+  ],
+  "Projects": [
+    {
+      "Name": "admin",
+      "SiteName": "EcoPeyk.Admin",
+      "ProjectPath": "Web\\WebUIs\\Panel\\EcoPeyk.Panel.WebUI",
+      "ProjectSettings": [
+        {
+          "FileName": "appsettings.json",
+          "Key": "Monitoring",
+          "NewValue": "http://monitoring.ecopeyk.ir"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "CoreServiceUri",
+          "NewValue": "http://79.175.151.128:9000/"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "dbName",
+          "NewValue": "EcoPeykDb"
+        }
+      ]
     },
-    "Git": {
-      "Path": "C:\\Project"
+    {
+      "Name": "driver",
+      "SiteName": "EcoPeyk.Driver",
+      "ProjectPath": "Web\\AndroidAPIs\\Driver\\EndPoints\\ICP.MobileAPI.WebApi",
+      "ProjectSettings": [
+        {
+          "FileName": "appsettings.json",
+          "Key": "BaseApiAddress",
+          "NewValue": "http://79.175.133.163:7811/"
+        }
+      ]
     },
-    "ProjectSettings": [
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
-        "Key": "BaseApiAddress",
-        "NewValue": "http://monitoringapi.sobhaniyan.ir/"
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
-        "Key": "instance",
-        "NewValue": "."
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
-        "Key": "username",
-        "NewValue": "sa"
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\Driver\\appsettings.json",
-        "Key": "password",
-        "NewValue": "2#Iman@1"
-      }
-    ]
-  },
-  {
-    "Name": "monitoringapi",
-    "ProjectPath": "C:\\Project\\Web\\WebUIs\\Monitoring\\EcoPeyk.Monitoring.WebApi",
-    "ProjectOutputPath": "C:\\Output\\MonitoringApi",
-    "BackUpPath": "C:\\BackUp\\MonitoringApi",
-    "Site": {
-      "Name": "EcoPeyk.MonitoringApi.AutoDelivered",
-      "Path": "C:\\WebSite.AutoDelivered\\MonitoringApi"
+    {
+      "Name": "monitoringapi",
+      "SiteName": "EcoPeyk.MonitoringApi",
+      "ProjectPath": "Web\\WebUIs\\Monitoring\\EcoPeyk.Monitoring.WebApi",
+      "ProjectSettings": [
+        {
+          "FileName": "appsettings.json",
+          "Key": "CoreServiceUri",
+          "NewValue": "http://79.175.151.128:9000/"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "dbName",
+          "NewValue": "EcoPeykDb"
+        }
+      ]
     },
-    "Git": {
-      "Path": "C:\\Project"
-    },
-    "ProjectSettings": [
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "CoreServiceUri",
-        "NewValue": "http://79.175.151.128:9000/"
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "instance",
-        "NewValue": "."
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "dbName",
-        "NewValue": "EcoPeykDb"
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "username",
-        "NewValue": "sa"
-      },
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\MonitoringApi\\appsettings.json",
-        "Key": "password",
-        "NewValue": "2#Iman@1"
-      }
-    ]
-  },
-  {
-    "Name": "monitoring",
-    "ProjectPath": "C:\\Project\\Web\\WebUIs\\Monitoring\\EcoPeyk.Monitoring.WebUI",
-    "ProjectOutputPath": "C:\\Output\\Monitoring",
-    "BackUpPath": "C:\\BackUp\\Monitoring",
-    "Site": {
-      "Name": "EcoPeyk.Monitoring.AutoDelivered",
-      "Path": "C:\\WebSite.AutoDelivered\\Monitoring"
-    },
-    "Git": {
-      "Path": "C:\\Project"
-    },
-    "ProjectSettings": [
-      {
-        "FilePath": "C:\\WebSite.AutoDelivered\\Monitoring\\wwwroot\\appsettings.json",
-        "Key": "BaseApiAddress",
-        "NewValue": "http://monitoringapi.sobhaniyan.ir/"
-      }
-    ]
-  }
-]
+    {
+      "Name": "monitoring",
+      "SiteName": "EcoPeyk.Monitoring",
+      "ProjectPath": "Web\\WebUIs\\Monitoring\\EcoPeyk.Monitoring.WebUI",
+      "ProjectSettings": [
+        {
+          "FileName": "wwwroot\\appsettings.json",
+          "Key": "BaseApiAddress",
+          "NewValue": "http://79.175.133.163:7811/"
+        }
+      ]
+    }
+  ]
+}

@@ -14,6 +14,9 @@ namespace Ighan.AutoDelivery.Core
 
         public static void ReplaceByKey(string path, string key, string newValue)
         {
+            if (!File.Exists(path))
+                return;
+
             var lines = File.ReadAllLines(path);
 
             var resultLines = new List<string>();

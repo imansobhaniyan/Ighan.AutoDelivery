@@ -17,39 +17,33 @@ namespace Ighan.AutoDelivery.ConsoleDemo
         {
             var dt = DateTime.Now;
 
-            var projects = JsonSerializer.Deserialize<List<Project>>(File.ReadAllText(Environment.CurrentDirectory + "\\config.json"));
+            var solution = JsonSerializer.Deserialize<Solution>(File.ReadAllText(Environment.CurrentDirectory + "\\config.json"));
 
             if (args != null && args.Length > 0)
-                projects = projects.Where(f => args.Any(arg => f.Name == arg)).ToList();
+                solution.Projects = solution.Projects.Where(f => args.Any(arg => f.Name == arg)).ToList();
 
             if (args == null || !args.Contains("monitoring"))
-                projects = projects.Where(f => f.Name != "monitoring").ToList();
+                solution.Projects = solution.Projects.Where(f => f.Name != "monitoring").ToList();
 
-            foreach (var project in projects)
+            GitRepositoryPuller.Pull(solution.RepositoryPath);
+
+            foreach (var project in solution.Projects)
             {
-                GitRepositoryPuller.Pull(project.Git.Path);
+                DotNetBuilder.Release(Path.Combine(solution.RepositoryPath, project.ProjectPath), Path.Combine(solution.DestinationPath, project.SiteName, "Publish"));
 
-                DirectoryFullGraphRemover.Remove(project.ProjectOutputPath);
+                IISWebSiteManager.Stop(project.SiteName);
 
-                DotNetBuilder.Release(project.ProjectPath, project.ProjectOutputPath);
+                DirectoryFullGraphCopier.Copy(Path.Combine(solution.DestinationPath, project.SiteName, "WebSite"), Path.Combine(solution.DestinationPath, project.SiteName, "BackUp"));
 
-                IISWebSiteManager.Stop(project.Site.Name);
+                DirectoryFullGraphCopier.Copy(Path.Combine(solution.DestinationPath, project.SiteName, "Publish"), Path.Combine(solution.DestinationPath, project.SiteName, "WebSite"));
 
-                DirectoryFullGraphRemover.Remove(project.BackUpPath);
-
-                DirectoryFullGraphCopier.Copy(project.Site.Path, project.BackUpPath);
-
-                DirectoryFullGraphRemover.Remove(project.Site.Path);
-
-                DirectoryFullGraphCopier.Copy(project.ProjectOutputPath, project.Site.Path);
+                foreach (var solutionSetting in solution.SolutionSettings)
+                    FileContentReplacer.ReplaceByKey(Path.Combine(solution.DestinationPath, project.SiteName, "WebSite", solutionSetting.FileName), solutionSetting.Key, solutionSetting.NewValue);
 
                 foreach (var projectSetting in project.ProjectSettings)
-                    if (projectSetting.HasKey())
-                        FileContentReplacer.ReplaceByKey(projectSetting.FilePath, projectSetting.Key, projectSetting.NewValue);
-                    else
-                        FileContentReplacer.Replace(projectSetting.FilePath, projectSetting.OldValue, projectSetting.NewValue);
+                    FileContentReplacer.ReplaceByKey(Path.Combine(solution.DestinationPath, project.SiteName, "WebSite", projectSetting.FileName), projectSetting.Key, projectSetting.NewValue);
 
-                IISWebSiteManager.Start(project.Site.Name);
+                IISWebSiteManager.Start(project.SiteName);
             }
 
             var period = DateTime.Now - dt;
@@ -57,72 +51,37 @@ namespace Ighan.AutoDelivery.ConsoleDemo
             Console.WriteLine($"Finished in: {period}");
 
             Console.ReadLine();
+        }
 
-            //try
-            //{
-            //    TestRequestSender.Send(project.TestRequestUrl);
-            //}
-            //catch
-            //{
-            //    IISWebSiteManager.Stop(project.Site.Name);
+        public class Solution
+        {
+            public string RepositoryPath { get; set; }
 
-            //    DirectoryFullGraphRemover.Remove(project.Site.Path);
+            public string DestinationPath { get; set; }
 
-            //    DirectoryFullGraphCopier.Copy(project.BackUpPath, project.Site.Path);
+            public List<Project> Projects { get; set; }
 
-            //    IISWebSiteManager.Start(project.Site.Name);
-            //}
-
-            //Console.WriteLine("Hello World!");
+            public List<Setting> SolutionSettings { get; set; }
         }
 
         public class Project
         {
             public string Name { get; set; }
 
-            public string BasePath { get; set; }
-
-            public Site Site { get; set; }
-
-            public Git Git { get; set; }
+            public string SiteName { get; set; }
 
             public string ProjectPath { get; set; }
-
-            public string ProjectOutputPath { get; set; }
-
-            public string BackUpPath { get; set; }
-
-            public string TestRequestUrl { get; set; }
 
             public List<Setting> ProjectSettings { get; set; }
         }
 
-        public class Site
-        {
-            public string Name { get; set; }
-
-            public string Path { get; set; }
-        }
-
-        public class Git
-        {
-            public string Path { get; set; }
-        }
-
         public class Setting
         {
-            public string FilePath { get; set; }
+            public string FileName { get; set; }
 
             public string Key { get; set; }
 
-            public string OldValue { get; set; }
-
             public string NewValue { get; set; }
-
-            public bool HasKey()
-            {
-                return !string.IsNullOrWhiteSpace(Key);
-            }
         }
     }
 }
