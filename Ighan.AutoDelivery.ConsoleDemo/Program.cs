@@ -7,6 +7,7 @@ using System.Linq;
 using System.Management.Automation;
 using System.Text.Json;
 
+using Ighan.AutoDelivery.ConsoleDemo.Models;
 using Ighan.AutoDelivery.Core;
 
 namespace Ighan.AutoDelivery.ConsoleDemo
@@ -51,37 +52,6 @@ namespace Ighan.AutoDelivery.ConsoleDemo
             Console.WriteLine($"Finished in: {period}");
 
             Console.ReadLine();
-        }
-
-        public class Solution
-        {
-            public string RepositoryPath { get; set; }
-
-            public string DestinationPath { get; set; }
-
-            public List<Project> Projects { get; set; }
-
-            public List<Setting> SolutionSettings { get; set; }
-        }
-
-        public class Project
-        {
-            public string Name { get; set; }
-
-            public string SiteName { get; set; }
-
-            public string ProjectPath { get; set; }
-
-            public List<Setting> ProjectSettings { get; set; }
-        }
-
-        public class Setting
-        {
-            public string FileName { get; set; }
-
-            public string Key { get; set; }
-
-            public string NewValue { get; set; }
         }
     }
 }
