@@ -1,0 +1,86 @@
+{
+  "RepositoryPath": "C:\\Projects",
+  "DestinationPath": "C:\\WebSites",
+  "SolutionSettings": [
+    {
+      "FileName": "appsettings.json",
+      "Key": "instance",
+      "NewValue": "."
+    },
+    {
+      "FileName": "appsettings.json",
+      "Key": "username",
+      "NewValue": "sa"
+    },
+    {
+      "FileName": "appsettings.json",
+      "Key": "password",
+      "NewValue": "2#Iman@1"
+    }
+  ],
+  "Projects": [
+    {
+      "Name": "admin",
+      "SiteName": "EcoPeyk.Admin",
+      "ProjectPath": "Web\\WebUIs\\Panel\\EcoPeyk.Panel.WebUI",
+      "ProjectSettings": [
+        {
+          "FileName": "appsettings.json",
+          "Key": "Monitoring",
+          "NewValue": "http://monitoring.eco-peyk.com"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "CoreServiceUri",
+          "NewValue": "http://79.175.151.128:9090/"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "dbName",
+          "NewValue": "EcoPeykDb"
+        }
+      ]
+    },
+    {
+      "Name": "driver",
+      "SiteName": "EcoPeyk.Driver",
+      "ProjectPath": "Web\\AndroidAPIs\\Driver\\EndPoints\\ICP.MobileAPI.WebApi",
+      "ProjectSettings": [
+        {
+          "FileName": "appsettings.json",
+          "Key": "BaseApiAddress",
+          "NewValue": "http://79.175.133.163:7811/"
+        }
+      ]
+    },
+    {
+      "Name": "monitoringapi",
+      "SiteName": "EcoPeyk.MonitoringApi",
+      "ProjectPath": "Web\\WebUIs\\Monitoring\\EcoPeyk.Monitoring.WebApi",
+      "ProjectSettings": [
+        {
+          "FileName": "appsettings.json",
+          "Key": "CoreServiceUri",
+          "NewValue": "http://79.175.151.128:9090/"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "dbName",
+          "NewValue": "EcoPeykDb"
+        }
+      ]
+    },
+    {
+      "Name": "monitoring",
+      "SiteName": "EcoPeyk.Monitoring",
+      "ProjectPath": "Web\\WebUIs\\Monitoring\\EcoPeyk.Monitoring.WebUI",
+      "ProjectSettings": [
+        {
+          "FileName": "wwwroot\\appsettings.json",
+          "Key": "BaseApiAddress",
+          "NewValue": "http://79.175.133.163:7811/"
+        }
+      ]
+    }
+  ]
+}
