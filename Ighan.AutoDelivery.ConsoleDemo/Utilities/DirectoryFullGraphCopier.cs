@@ -11,17 +11,24 @@ namespace Ighan.AutoDelivery.Core
         {
             Console.WriteLine($"Start: coping => {sourcePath} into: {destinationPath}");
 
-            //Now Create all of the directories
-            foreach (string dirPath in Directory.GetDirectories(sourcePath, "*",
-                SearchOption.AllDirectories))
+            CreateDirectory(new DirectoryInfo(destinationPath));
+
+            foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
                 Directory.CreateDirectory(dirPath.Replace(sourcePath, destinationPath));
 
-            //Copy all the files & Replaces any files with the same name
-            foreach (string newPath in Directory.GetFiles(sourcePath, "*.*",
-                SearchOption.AllDirectories))
+            foreach (string newPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
                 File.Copy(newPath, newPath.Replace(sourcePath, destinationPath), true);
 
             Console.WriteLine($"End: coping");
+        }
+
+        private static void CreateDirectory(DirectoryInfo directoryInfo)
+        {
+            if (directoryInfo.Parent != null)
+                CreateDirectory(directoryInfo.Parent);
+
+            if (!directoryInfo.Exists)
+                directoryInfo.Create();
         }
     }
 }
