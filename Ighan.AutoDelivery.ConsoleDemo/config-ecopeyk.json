@@ -62,11 +62,6 @@
           "FileName": "appsettings.json",
           "Key": "CoreServiceUri",
           "NewValue": "http://79.175.151.128:9090/"
-        },
-        {
-          "FileName": "appsettings.json",
-          "Key": "dbName",
-          "NewValue": "EcoPeykDb"
         }
       ]
     },
@@ -79,6 +74,50 @@
           "FileName": "wwwroot\\appsettings.json",
           "Key": "BaseApiAddress",
           "NewValue": "http://79.175.133.163:7811/"
+        }
+      ]
+    },
+    {
+      "Name": "panel",
+      "SiteName": "EcoPeyk.Panel",
+      "ProjectPath": "Web\\WebUIs\\Customer\\EcoPeyk.Customer.WebUi",
+      "ProjectSettings": [
+        {
+          "FileName": "appsettings.json",
+          "Key": "admin",
+          "NewValue": "http://admin.eco-peyk.com"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "MyEcoContext",
+          "NewValue": "Server=.;Database=EcoPeykDb;user=sa;password=2#Iman@1;MultipleActiveResultSets=true"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "MyCustomerContext",
+          "NewValue": "Server=.;Database=CustomerDB;user=sa;password=2#Iman@1;MultipleActiveResultSets=true"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "hub",
+          "NewValue": "http://79.175.133.163:7811/hub"
+        }
+      ]
+    },
+    {
+      "Name": "panel",
+      "SiteName": "EcoPeyk.Customer",
+      "ProjectPath": "Web\\AndroidAPIs\\Customer\\EcoPeyk.CustomerApp.WebApi",
+      "ProjectSettings": [
+        {
+          "FileName": "appsettings.json",
+          "Key": "admin",
+          "NewValue": "http://admin.eco-peyk.com"
+        },
+        {
+          "FileName": "appsettings.json",
+          "Key": "hub",
+          "NewValue": "http://79.175.133.163:7811/hub"
         }
       ]
     }
